@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>DOM manipulation with forms</title>
+  </head>
+  <body>
+    <h1 id="title">DOM manipulation with forms!</h1>
+    <p id="description">
+      Here we are filling the form and on submission we are adding the user
+      details to the User table
+    </p>
+
+    <div class="container-fluid row">
+      <div class="col-lg-6 col-md-12">
+        <form
+          action="POST"
+          id="form"
+          onsubmit="getUserDetails(); return false;"
+        >
+          <div class="mb-3 form-group">
+            <label for="first-name" class="form-label">First Name</label><br />
+            <input
+              type="text"
+              id="first-name"
+              name="first-name"
+              class="form-control"
+              placeholder="First name"
+              required
+            />
+          </div>
+
+          <div class="mb-3 form-group">
+            <label for="last-name" class="form-label">Last Name</label><br />
+            <input
+              type="text"
+              id="last-name"
+              name="last-name"
+              class="form-control"
+              placeholder="Last name"
+              required
+            />
+          </div>
+
+          <div class="mb-3 form-group">
+            <label for="address" class="form-label">Address</label><br />
+            <textarea
+              name="address"
+              class="form-control"
+              id="address"
+              cols="30"
+              rows="10"
+              placeholder="Your address"
+            ></textarea>
+          </div>
+
+          <div class="mb-3 form-group">
+            <label for="pincode" class="form-label">Pincode</label><br />
+            <input
+              type="text"
+              id="pincode"
+              class="form-control"
+              name="pincode"
+              placeholder="Your pincode"
+              required
+            />
+          </div>
+
+          <div class="mb-3 form-group">
+            <label for="gender" class="fomr-check-label">Gender</label>
+            <input
+              type="radio"
+              name="gender"
+              class="form-check-input"
+              id="male"
+              value="male"
+            />
+            Male
+            <input
+              type="radio"
+              name="gender"
+              class="form-check-input"
+              id="female"
+              value="female"
+            />
+            Female
+            <input
+              type="radio"
+              name="gender"
+              class="form-check-input"
+              id="others"
+              value="others"
+            />
+            Others
+          </div>
+
+          <div class="mb-3 form-group">
+            <label for="food" class="form-check-label"
+              ><b>Choice of food:</b></label
+            ><br />
+            <input
+              type="checkbox"
+              id="food1"
+              class="form-check-input"
+              value="Poori sabzi"
+            />
+            Poori sabzi
+            <input
+              type="checkbox"
+              id="food2"
+              class="form-check-input"
+              value="Noodles"
+            />
+            Noodles
+            <input
+              type="checkbox"
+              id="food3"
+              class="form-check-input"
+              value="Upma"
+            />
+            Upma
+            <input
+              type="checkbox"
+              id="food4"
+              class="form-check-input"
+              value="Paratha"
+            />
+            Paratha
+            <input
+              type="checkbox"
+              id="food5"
+              class="form-check-input"
+              value="Pizza"
+            />
+            Pizza
+          </div>
+
+          <div class="mb-3 form-group">
+            <label for="state" class="form-label">State</label>
+            <input
+              type="text"
+              id="state"
+              name="state"
+              class="form-control"
+              placeholder="State"
+            />
+          </div>
+
+          <div class="mb-3 form-group">
+            <label for="country" class="form-label">Country</label>
+            <input
+              type="text"
+              id="country"
+              name="country"
+              class="form-control"
+              placeholder="Country"
+            />
+          </div>
+          <input type="submit" id="submit" class="btn btn-primary btn-lg" />
+        </form>
+      </div>
+
+      <div class="col-lg-6 col-md-12">
+        <h1 class="table-heading">User table</h1>
+        <table class="table table-striped table-responsive t1">
+          <thead>
+            <th scope="col">First name</th>
+            <th scope="col">Last name</th>
+            <th scope="col">Address</th>
+            <th scope="col">Pincode</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Food</th>
+            <th scope="col">State</th>
+            <th scope="col">Country</th>
+          </thead>
+          <tbody id="table-body"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://app.zenclass.in/sheets/v1/js/zen/suite/bundle.js"></script>
+  </body>
+</html>
